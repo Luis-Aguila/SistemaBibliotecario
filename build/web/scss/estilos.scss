@@ -1,0 +1,805 @@
+//---------------------------
+//patron de colores
+//---------------------------
+$texto:#111111;
+$principal:#007E7E;
+$secundario:#004E4E;
+
+html{
+    font-size: 15px;
+    position: relative; 
+    min-height: 100%;
+}
+
+body{
+    color: $texto;
+    margin: 0;
+    margin-bottom: 15px;
+}
+.index{
+    padding: 0px;
+}
+
+
+.cabezera{
+    background-size: 100% 50%;
+    background-attachment: fixed !important;
+    height: 25rem;
+    padding: 0rem;
+}
+.slider-wrap{
+    position: relative;
+    display: flex;
+    padding: 0;
+    height: 25rem;
+    padding: 0rem;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+.slider-container{
+	position: absolute;
+	top: 50%;
+	margin-top: -12rem;
+	z-index: 999;
+	width: 99%;
+}
+.cabezera .acerca{
+    margin-top: 1rem;
+    margin-left: 1.5rem;
+}
+.cabezera .acerca .menu-acerca-portada button{
+    color: $principal;
+}
+.cabezera .acerca .menu-acerca-portada ul{
+    background: $principal;
+}
+.cabezera .acerca .menu-acerca-portada ul li:hover{
+    background: $secundario;
+}
+
+.cabezera .acerca a{
+    color: #fff;
+    font-size: 15px;
+    margin: 15px;
+}
+.cabezera .acerca a:link{
+    text-decoration: none;
+}
+
+.cabezera .siganos .menu-siganos-portada button{
+    color: $principal;
+    opacity: .7;
+    transition: all .5s ease;
+}
+.cabezera .siganos .menu-siganos-portada button:hover{
+    opacity: 1;
+}
+.cabezera .siganos .menu-siganos-portada ul{
+    background: $principal;
+    margin-right: 3.5rem;
+}
+
+.cabezera .siganos .menu-siganos-portada ul li:hover{
+    background: $secundario;
+}
+.cabezera .siganos .menu-siganos-portada ul li i{
+    color: #fff;
+    margin-left: 1rem;
+}
+.cabezera .siganos .menu-siganos-portada ul li a{
+    color: #fff;
+}
+.cabezera .siganos .menu-siganos-portada ul li a:hover{
+    text-decoration: none;
+}
+
+.titulo-index h4{
+    font-size: 2rem;
+    color: $secundario;
+}
+.titulo{
+    display: flex;
+    justify-content: center;
+}
+.titulo .logo-portada{
+    margin-top: 2rem;
+}
+.titulo .logo-portada img{
+    height: 100px;
+    width: 400px;
+}
+.cabezera .buscador-horizontal{
+    display: flex;
+    justify-content: center;
+    margin-top: 2rem;
+}
+.cabezera .buscador-horizontal .formulario input{
+    height: 45px;
+    width: 650px;
+    border:0;
+    border-radius: 0 0 0 0;
+}
+.cabezera .buscador-horizontal .formulario button{
+    background: #fff;
+    border: 0;
+    height: 45px;
+}
+.cabezera .buscador-horizontal .formulario .fab{
+    font-size: 35px;
+    padding: 0px;
+    color: $principal;
+}
+
+
+
+
+.menu-index{
+    background: #fff;
+    padding: 0px;
+}
+.menu-index .item-menu{
+    display: flex;
+    flex-wrap: nowrap;
+    padding: 0px;
+}
+.menu-index .item-menu li{
+    background-color: $principal;
+    flex-grow: 1;
+    list-style: none;
+    height: 9rem;
+    text-align: center;
+    margin: .5px;
+    margin-top: 0px;
+    transition: all 1s ease;
+    width: 11.1%;
+}
+.menu-index .item-menu li:hover{
+    background-color: $secundario;
+}
+.menu-index .item-menu li a{
+    color: #fff;
+}
+
+.menu-index .item-menu li a:link{
+    text-decoration: none;
+}
+.menu-index .item-menu li a .fab,
+.menu-index .item-menu li a .fas,
+.menu-index .item-menu li a .far,{
+    font-size: 4rem;
+    padding: 15px;
+}
+.targetas .card-deck{
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+    text-align: center;
+}
+
+.targetas .card-deck .card img{
+    height: 142px;
+}
+.targetas .card-deck .card .card-body{
+    height: 150px;
+}
+.noticias{
+    margin-bottom: 1.5rem;
+}
+.noticias .card h4{
+    text-align: center;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+}
+.noticias .container .card .ficha-noticia{
+    display: flex;
+    align-items: center;
+}
+.ficha-noticia .fecha-noticia p{
+    text-align: center;
+}
+.ficha-noticia .card-body p{
+    margin-right: 1rem;
+}
+
+.piepagina p{
+    padding: 0;
+}
+.piepagina{
+    background: $principal;
+    color: #fff;
+    text-align: center;
+    font-size: 1rem;
+    position: absolute; 
+    bottom: 0; 
+    width: 100%;
+    padding: 0;
+}
+.piepagina .redes-sociales{
+    display: flex;
+    justify-content: center;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+.piepagina .redes-sociales a{
+    color: #fff;
+    font-size: 2rem;
+    margin: 0 .5rem;
+    opacity: .7;
+    transition: all .5s ease;
+}
+.piepagina .redes-sociales a:hover{
+    opacity: 1;
+}
+
+
+
+//---------------------------
+//Paginas Internas
+//---------------------------
+
+
+.menu-colapse{
+    padding: 0;
+    background: $principal;
+    height: 6rem;
+}
+.menu-colapse .menu{
+    background-color: $principal;
+    height: 6rem;
+}
+.menu-colapse .menu .logo-interno img{
+    height: 5rem;
+    width: 14rem;
+    margin-left: 12rem;
+}
+.menu-colapse .menu button{
+    margin-right: 12rem;
+}
+#contenido-menu{
+    padding: 0;
+}
+#contenido-menu .sub-menu{
+    background-color: $secundario;
+}
+#contenido-menu .sub-menu h5{
+    color: #fff;
+    margin-left: 2rem;
+}
+#contenido-menu .sub-menu ul li{
+    list-style: none;
+}
+#contenido-menu .sub-menu ul li a{
+    color: #fff;
+    transition: all .5s ease;
+}
+#contenido-menu .sub-menu ul li a i{
+    margin-right: 1rem;
+}
+#contenido-menu .sub-menu ul li a:link{
+    text-decoration: none;
+}
+#contenido-menu .sub-menu ul li a:hover{
+    color: $principal;
+}
+.buscador-internas{
+    display: flex;
+    justify-content: center;
+    margin-top: 1rem;
+}
+.buscador-internas .formulario-interno input{
+    height: 45px;
+    width: 650px;
+}
+.buscador-internas .formulario-interno button{
+    background: #fff;
+    border: 1px;
+    height: 45px;
+}
+.buscador-internas .formulario-interno .fab{
+    font-size: 35px;
+    padding: 0px;
+    color: $principal;
+}
+.titulo-interno{
+    background: $secundario;
+    padding: 0;
+    margin-top: 1rem;
+    height: 4rem;
+}
+.titulo-interno h2{
+    margin-top: .7rem;
+    color: #fff;
+}
+.titulo-interno h2 i{
+    margin-right: 4rem;
+}
+
+
+
+
+#body-login{
+    
+    background: url("../images/fondo-encabezado.jpg") no-repeat center center;
+    //background: url("../images/fondo_001.jpg") no-repeat center center;
+    background-size: cover;
+    background-attachment: fixed !important;
+    
+    //background: $secundario;
+}
+
+.wrapper{
+    margin-top: 120px;
+}
+.form-signin{
+  max-width: 420px;
+  padding: 30px 38px 66px;
+  margin: 0 auto;
+  border: 1px solid #cccccc;
+  background: #fff;
+}
+.form-signin .form-signin-heading img{
+  height: 150px;
+  width: 150px;
+  transition: all 1s ease;
+}
+.form-signin .form-signin-heading img:hover{
+  transform: rotateY(360deg);
+    transform-style: preserve-3d;
+}
+.input-group{
+    height: 45px;
+    margin-bottom: 15px;
+    border-radius: 0px;
+    color: $secundario;
+}
+.input-group .input-group-addon .fa{
+    font-size: 25px;
+    margin-top: 10px;
+    margin-right: 10px;
+}
+.form-control{
+    height: 45px;
+    color: $principal;
+}
+.input-group:hover span i{
+    color: $secundario;
+}
+.btn-block{
+    border-radius: 0px;
+    margin-top: 25px;
+    background-color: $secundario;
+    border: none;
+}
+.btn-block:hover{
+    background-color: $principal;
+}
+.imagen-login{
+    display: flex;
+    justify-content: center; 
+}
+
+.imagen-login img{
+    margin-top: 80px;
+    height: 600px;
+    width: 350px;
+    border: 2px solid transparent;
+    border-radius: 51px;
+}
+
+
+////////////////////////////////////
+//Estilos ventanas Internas
+////////////////////////////////////
+.cuerpo-ingresolibro{
+    background: url("../images/fondo-encabezado.jpg") no-repeat center top;
+    background-size: cover;
+    background-attachment: fixed !important;
+    height: 650px;
+    padding: 0;
+    color: $texto;
+    margin-bottom: 1rem;
+}
+.subcuerpo-ingresolibro{
+    background: #fff;
+    padding: 0;
+    height: 100%;
+    
+}
+.opciones-gestion-libro{
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    background: $secundario;
+}
+.opciones-gestion-libro button.btn-success{
+    border-radius: 0px;
+    background: $principal;
+    width: 33.3%;
+    height: 3rem;
+    border: 0;
+    outline: 0 none;
+}
+.opciones-gestion-libro button:hover, 
+.opciones-gestion-libro button:focus, 
+.opciones-gestion-libro button:active{
+    background: $secundario !important;
+    box-shadow:none !important;
+}
+#formulario-libro,
+#formulario-autor,
+#formulario-editorial,
+#formulario-alumno,
+#formulario-docente,
+#formulario-solicitudprestamo,
+#formulario-perfil{
+    margin-top: 3rem;
+}
+.subcuerpo-ingresolibro h3{
+    text-align: center;
+}
+.formulariosinternosingreso{
+    border: solid 2px $principal;
+    border-radius: 10px;
+}
+.formulariosinternosingreso form{
+    margin: 1rem;
+}
+.formulariosinternosingreso form input,
+.formulariosinternosingreso form select{
+    width: 640px;
+}
+.formulariosinternosingreso form input,
+.formulariosinternosingreso form small,
+.formulariosinternosingreso form select{
+    margin-left: 50px;
+}
+.formulariosinternosingreso form button{
+    margin-top: 2rem;
+    margin-left: 18rem;
+    border-radius: 5px;
+    background: $principal;
+    height: 3rem;
+    border: 0;
+    outline: 0 none;
+}
+.formulariosinternosingreso form button:hover,
+.formulariosinternosingreso form button:focus,
+.formulariosinternosingreso form button:active,{
+    background: $secundario !important;
+    box-shadow:none !important;
+}
+
+
+.cuerpo-coleccionlibro{
+    background: url("../images/fondo-encabezado.jpg") no-repeat center top;
+    background-size: cover;
+    background-attachment: fixed !important;
+    height: 100%;
+    padding: 0;
+    color: $texto;
+    margin-bottom: 1rem;
+}
+.subcuerpo-coleccionlibro{
+    background: #fff;
+    padding: 0;
+    height: 100%;
+    
+}
+
+
+
+.cuerpo-nuevosolicitante{
+    background: url("../images/fondo-encabezado.jpg") no-repeat center top;
+    background-size: cover;
+    background-attachment: fixed !important;
+    height: 800px;
+    padding: 0;
+    color: $texto;
+    margin-bottom: 1rem;
+}
+.subcuerpo-nuevosolicitante{
+    background: #fff;
+    padding: 0;
+    height: 100%;
+    
+}
+
+.opciones-gestion-nuevosolicitante{
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    background: $secundario;
+}
+.opciones-gestion-nuevosolicitante button.btn-success{
+    border-radius: 0px;
+    background: $principal;
+    width: 50%;
+    height: 3rem;
+    border: 0;
+    outline: 0 none;
+}
+.opciones-gestion-nuevosolicitante button:hover, 
+.opciones-gestion-nuevosolicitante button:focus, 
+.opciones-gestion-nuevosolicitante button:active{
+    background: $secundario !important;
+    box-shadow:none !important;
+}
+.subcuerpo-nuevosolicitante form .form-row input,
+.subcuerpo-nuevosolicitante form .form-row select{
+    width: 275px;
+}
+
+
+.cuerpo-estudiantes{
+    background: url("../images/fondo-encabezado.jpg") no-repeat center top;
+    background-size: cover;
+    background-attachment: fixed !important;
+    height: 650px;
+    padding: 0;
+    color: $texto;
+    margin-bottom: 1rem;
+}
+.subcuerpo-estudiantes{
+    background: #fff;
+    padding: 0;
+    height: 100%;
+    
+}
+
+
+.cuerpo-docentes{
+    background: url("../images/fondo-encabezado.jpg") no-repeat center top;
+    background-size: cover;
+    background-attachment: fixed !important;
+    height: 650px;
+    padding: 0;
+    color: $texto;
+    margin-bottom: 1rem;
+}
+.subcuerpo-docentes{
+    background: #fff;
+    padding: 0;
+    height: 100%;
+    
+}
+
+
+
+
+
+
+
+
+.cuerpo-solicitudprestamo{
+    background: url("../images/fondo-encabezado.jpg") no-repeat center top;
+    background-size: cover;
+    background-attachment: fixed !important;
+    height: 600px;
+    padding: 0;
+    color: $texto;
+    margin-bottom: 1rem;
+}
+.subcuerpo-solicitudprestamo{
+    background: #fff;
+    padding: 0;
+    height: 100%;
+    
+}
+
+
+
+.cuerpo-estadodevoluciones{
+    background: url("../images/fondo-encabezado.jpg") no-repeat center top;
+    background-size: cover;
+    background-attachment: fixed !important;
+    height: 1500px;
+    padding: 0;
+    color: $texto;
+    margin-bottom: 1rem;
+}
+.subcuerpo-estadodevoluciones{
+    background: #fff;
+    padding: 0;
+    height: 100%;
+    
+}
+
+
+.cuerpo-perfil{
+    background: url("../images/fondo-encabezado.jpg") no-repeat center top;
+    background-size: cover;
+    background-attachment: fixed !important;
+    height: 750px;
+    padding: 0;
+    color: $texto;
+    margin-bottom: 1rem;
+}
+.subcuerpo-perfil{
+    background: #fff;
+    padding: 0;
+    height: 100%;
+    
+}
+
+.cuerpo-perfil .subcuerpo-perfil .targeta-perfil{
+    height: 40rem;
+    margin-top: 2rem;
+}
+.cuerpo-perfil .subcuerpo-perfil .targeta-perfil .menu-perfil i,
+.cuerpo-perfil .subcuerpo-perfil .targeta-perfil .menu-perfil button{
+    font-size: 1.2rem;
+    color: #fff;
+}
+
+.cuerpo-perfil .subcuerpo-perfil .targeta-perfil .card .titulo-perfil{
+    background: $principal;
+    color:#fff;
+}
+.cuerpo-perfil .subcuerpo-perfil .targeta-perfil .card img{
+    margin-top: 1rem;
+    height: 13rem;
+    width: 13rem;
+    border-radius: 13rem;
+}
+
+
+
+.cuerpo-detalleprestamo{
+    background: url("../images/fondo-encabezado.jpg") no-repeat center top;
+    background-size: cover;
+    background-attachment: fixed !important;
+    height: 1400px;
+    padding: 0;
+    color: $texto;
+    margin-bottom: 1rem;
+}
+
+.cuerpo-detalleprestamo .subcuerpo-detalleprestamo{
+    background: #fff;
+    padding: 0;
+    height: 100%;
+}
+.cuerpo-detalleprestamo .subcuerpo-detalleprestamo .formulario-solicitud-prestamo{
+    position: relative;
+    padding: 1rem;
+    height: 88%;
+    top: 1rem;
+    margin-left: 1rem;
+    margin-right: 1rem;
+    border: 3px solid $secundario;
+    border-radius: 10px;
+    text-align: center;
+}
+.formulario-solicitud-prestamo .formulario-solicitud-prestamo-interno{
+    padding: 1rem;
+    border: 1px solid $principal;
+    height: 93%;
+    font-size: 13px;
+}
+
+.formulario-solicitud-prestamo .formulario-solicitud-prestamo-interno table{
+    border: 1px solid $secundario;
+    margin-top: 1rem;
+    margin-bottom: 3rem;
+}
+.headertabla{
+    background-color: $secundario;
+    color: #fff;
+}
+.formulario-solicitud-prestamo .formulario-solicitud-prestamo-interno .buscarlibrosolicitud{
+    
+    display: block;
+    flex-direction: column;
+    align-items: center;
+}
+
+.formulario-solicitud-prestamo .formulario-solicitud-prestamo-interno .buscarlibrosolicitud .formulariosolicitud {
+    display: flex;
+    justify-content: center;
+    margin-top: .5rem;
+}
+.formulario-solicitud-prestamo .formulario-solicitud-prestamo-interno .buscarlibrosolicitud .formulariosolicitud form{
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+}
+
+.formulario-solicitud-prestamo .formulario-solicitud-prestamo-interno .buscarlibrosolicitud .formulariosolicitud input{
+    height: 45px;
+    width: 400px;
+}
+.formulario-solicitud-prestamo .formulario-solicitud-prestamo-interno .buscarlibrosolicitud .formulariosolicitud button{
+    background: #fff;
+    border: 0;
+    height: 45px;
+}
+.formulario-solicitud-prestamo .formulario-solicitud-prestamo-interno .buscarlibrosolicitud .formulariosolicitud .fab{
+    font-size: 35px;
+    padding: 0px;
+    color: $principal;
+}
+
+
+.formulario-solicitud-prestamo .formulario-solicitud-prestamo-interno .buscarlibrosolicitud .tablasolicitud{
+    height: 140px;
+    border: 1px solid $secundario;
+}
+
+.formulario-solicitud-prestamo .formulario-solicitud-prestamo-interno .perfillibro .perfillibro-info{
+    border: 1px solid $secundario;
+    margin-top: 2rem;
+    height: 190px;
+}
+
+.formulario-solicitud-prestamo .formulario-solicitud-prestamo-interno .perfillibro ul{
+    margin-top: 2rem;
+    text-align: left;
+}
+.formulario-solicitud-prestamo .formulario-solicitud-prestamo-interno .perfillibro ul li{
+    font-size: 15px;
+    list-style: none;
+    margin-bottom: 8px;
+}
+
+.formulario-solicitud-prestamo .formulario-solicitud-prestamo-interno .seleccion-fechas{
+    margin-top: 3rem;
+}
+
+.formulario-solicitud-prestamo .formulario-solicitud-prestamo-interno .button-realizarsolicitud{
+    margin-top: 17rem;
+}
+
+.formulario-solicitud-prestamo .formulario-solicitud-prestamo-interno .button-realizarsolicitud button{
+    border-radius: 5px;
+    background: $principal;
+    height: 3rem;
+    border: 0;
+    outline: 0 none;
+}
+.formulario-solicitud-prestamo .formulario-solicitud-prestamo-interno .button-realizarsolicitud button:hover,
+.formulario-solicitud-prestamo .formulario-solicitud-prestamo-interno .button-realizarsolicitud button:focus,
+.formulario-solicitud-prestamo .formulario-solicitud-prestamo-interno .button-realizarsolicitud button:active{
+    background: $secundario !important;
+    box-shadow:none !important;
+}
+
+
+
+
+
+.cuerpo-perfilarrendatario{
+    background: url("../images/fondo-encabezado.jpg") no-repeat center top;
+    background-size: cover;
+    background-attachment: fixed !important;
+    height: 1300px;
+    padding: 0;
+    color: $texto;
+    margin-bottom: 1rem;
+}
+
+.cuerpo-perfilarrendatario .subcuerpo-perfilarrendatario{
+    background: #fff;
+    padding: 0;
+    height: 93.5%;
+}
+
+.cuerpo-perfilarrendatario .subcuerpo-perfilarrendatario .targeta-perfil{
+    height: 40rem;
+    margin-top: 2rem;
+}
+.cuerpo-perfilarrendatario .subcuerpo-perfilarrendatario .targeta-perfil .menu-perfil i,
+.cuerpo-perfilarrendatario .subcuerpo-perfilarrendatario .targeta-perfil .menu-perfil button{
+    font-size: 1.2rem;
+    color: #fff;
+}
+
+.cuerpo-perfilarrendatario .subcuerpo-perfilarrendatario .targeta-perfil .card .titulo-perfil{
+    background: $principal;
+    color:#fff;
+}
+.cuerpo-perfilarrendatario .subcuerpo-perfilarrendatario .targeta-perfil .card img{
+    margin-top: 1rem;
+    height: 13rem;
+    width: 13rem;
+    border-radius: 13rem;
+}
