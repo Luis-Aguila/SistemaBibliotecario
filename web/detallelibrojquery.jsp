@@ -4,30 +4,35 @@
     Author     : boy-l
 --%>
 
-<%@page import="java.sql.ResultSet"%>
-<%
+    <%@page import="java.sql.ResultSet"%>
+        <%
+<!--Objeto de clase concción-->
     Data.ConnectionClass con = new Data.ConnectionClass();
 %>
-<%@page contentType="text/html" pageEncoding="UTF-8"%>
-<!DOCTYPE html>
-<html>
-    <head>
-        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>JSP Page</title>
-    </head>
-    <body>
-        <div id="listadetallebusquedalibro">
-            <div class="col-2">
-                <ul>
-                    <li><strong>Código</strong></li>
-                    <li><strong>Título</strong></li>
-                    <li><strong>Autor</strong></li>
-                    <li><strong>Editorial</strong></li>
-                    <li><strong>Estado</strong></li>
-                </ul>
-            </div>
-            <div class="col-10">
-                <%
+            <%@page contentType="text/html" pageEncoding="UTF-8"%>
+                <!DOCTYPE html>
+                <html>
+
+                <head>
+                    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+                    <title>JSP Page</title>
+                </head>
+
+                <body>
+                    <!--titulos de detalles-->
+                    <div id="listadetallebusquedalibro">
+                        <div class="col-2">
+                            <ul>
+                                <li><strong>Código</strong></li>
+                                <li><strong>Título</strong></li>
+                                <li><strong>Autor</strong></li>
+                                <li><strong>Editorial</strong></li>
+                                <li><strong>Estado</strong></li>
+                            </ul>
+                        </div>
+                        <div class="col-10">
+                            <!--Consulta a base de datos de detalle de libro-->
+                            <%
                     String iddetallelibro = (String)request.getSession().getAttribute("idlibrodetalle");
                     int idlibro = 0;
                     if(iddetallelibro != null){
@@ -41,16 +46,27 @@
                     while(rsidlibro.next()){
 
                 %>
-                <ul>
-                    <li><strong>:</strong><%out.println(rsidlibro.getString("id_libro"));%></li>
-                    <li><strong>:</strong><%out.println(rsidlibro.getString("nombre_libro"));%></li>
-                    <li><strong>:</strong><%out.println(rsidlibro.getString("nombre_autor"));%></li>
-                    <li><strong>:</strong><%out.println(rsidlibro.getString("nombre_editorial"));%></li>
-                    <li><strong>:</strong><%out.println(rsidlibro.getString("nombre_estadolibro"));%></li>
-                </ul>
-                <%}%>
-            </div>
-        </div>
+                                <ul>
+                                    <li><strong>:</strong>
+                                        <%out.println(rsidlibro.getString("id_libro"));%>
+                                    </li>
+                                    <li><strong>:</strong>
+                                        <%out.println(rsidlibro.getString("nombre_libro"));%>
+                                    </li>
+                                    <li><strong>:</strong>
+                                        <%out.println(rsidlibro.getString("nombre_autor"));%>
+                                    </li>
+                                    <li><strong>:</strong>
+                                        <%out.println(rsidlibro.getString("nombre_editorial"));%>
+                                    </li>
+                                    <li><strong>:</strong>
+                                        <%out.println(rsidlibro.getString("nombre_estadolibro"));%>
+                                    </li>
+                                </ul>
+                                <%}%>
+                        </div>
+                    </div>
 
-    </body>
-</html>
+                </body>
+
+                </html>

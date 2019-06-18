@@ -3,12 +3,13 @@
     Created on : 31-may-2018, 1:23:28
     Author     : boy-l
 --%>
-<%@page session = "true" %>
-<%@page import="java.sql.ResultSet"%>
-<%@page import="java.text.SimpleDateFormat"%>
-<%@page import="java.util.Date"%>
-<%@page contentType="text/html" pageEncoding="UTF-8"%>
-<%
+    <!--Se abré sesión y se establece la conección a la base de datos para solicitar la información del solicitante-->
+    <%@page session = "true" %>
+        <%@page import="java.sql.ResultSet"%>
+            <%@page import="java.text.SimpleDateFormat"%>
+                <%@page import="java.util.Date"%>
+                    <%@page contentType="text/html" pageEncoding="UTF-8"%>
+                        <%
     Data.ConnectionClass con = new Data.ConnectionClass();
     String sqlestudiante = "";
     String sqldocente = "";
@@ -25,60 +26,64 @@
             
     String mensaje = "";
 %>
-<!DOCTYPE html>
-<html>
-    <head>
-        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>JSP Page</title>
-    </head>
-    <body>
-        <div class="container-fluid">
-            <div class="row titulo-interno d-flex justify-content-center">
-                <div class="row">
-                    <div class="col-12">
-                        <h2><i class="far fa-address-card"></i>Perfil del Arrendatario</h2>
-                    </div>
-                </div>
-            </div>
-        </div>
-        
-        
-        <div class="container-fluid cuerpo-perfilarrendatario">
-            <div class="container subcuerpo-perfilarrendatario">
-                
-                
-                <div class="row" >
-                    <div class="col-6 offset-3">
-                        <div class="card-deck targeta-perfil">
-                            <div class="card">
-                                <div class="titulo-perfil">
-                                    <div class="row">
-                                        <div class="col-1">
-                                            <div class="menu-perfil">
-                                                <div class="dropdown">
-                                                    <button class="btn btn-link dropdown-toggle" type="button" id="menu_perfil" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
-                                                        <i class="fas fa-ellipsis-v"></i>
-                                                    </button>
-                                                    <ul class="dropdown-menu" aria-labelledby="menu_perfil">
-                                                        <li><a href="#">Editar Perfil</a></li>
-                                                    </ul>
-                                                </div>
+                            <!DOCTYPE html>
+                            <html>
+
+                            <head>
+                                <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+                                <title>JSP Page</title>
+                            </head>
+
+                            <body>
+                                <!--Titulo de página-->
+                                <div class="container-fluid">
+                                    <div class="row titulo-interno d-flex justify-content-center">
+                                        <div class="row">
+                                            <div class="col-12">
+                                                <h2><i class="far fa-address-card"></i>Perfil del Arrendatario</h2>
                                             </div>
                                         </div>
-                                        <div class="col-11">
-                                            
-                                        </div>
-                                        
                                     </div>
                                 </div>
-                                <center>
-                                    <img class="center-block" src="images/smile-perfil.png"alt="Card image cap">
-                                </center>
-                                
-                                <div class="card-body">
-                                    <h5 class="card-title">Información adicional</h5>
-                                    <div class="row">
-                                        <%
+
+
+                                <div class="container-fluid cuerpo-perfilarrendatario">
+                                    <div class="container subcuerpo-perfilarrendatario">
+                                        <!--Formulario de edición del perfil del solicitante-->
+
+                                        <div class="row">
+                                            <div class="col-6 offset-3">
+                                                <div class="card-deck targeta-perfil">
+                                                    <div class="card">
+                                                        <div class="titulo-perfil">
+                                                            <div class="row">
+                                                                <div class="col-1">
+                                                                    <div class="menu-perfil">
+                                                                        <div class="dropdown">
+                                                                            <button class="btn btn-link dropdown-toggle" type="button" id="menu_perfil" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                                                        <i class="fas fa-ellipsis-v"></i>
+                                                    </button>
+                                                                            <ul class="dropdown-menu" aria-labelledby="menu_perfil">
+                                                                                <li><a href="#">Editar Perfil</a></li>
+                                                                            </ul>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="col-11">
+
+                                                                </div>
+
+                                                            </div>
+                                                        </div>
+                                                        <center>
+                                                            <img class="center-block" src="images/smile-perfil.png" alt="Card image cap">
+                                                        </center>
+
+                                                        <div class="card-body">
+                                                            <h5 class="card-title">Información adicional</h5>
+                                                            <div class="row">
+                                                                <!--Solicitud a base de datos de la información-->
+                                                                <%
                                             String user = (String)request.getSession().getAttribute("arrendatario");
                                             sqlestudiante="SELECT e.rut_estudiante, e.nombre_estudiante, e.apellido_estudiante, e.direccion_estudiante, e.telefono_estudiante, e.anioestudio_estudiante, c.nombre_carrera, ee.nombre_estadoestudiante FROM estudiante e JOIN carrera c ON (e.Carrera_id_carrera = c.id_carrera) JOIN estadoestudiante ee ON (e.estadoestudiante_id_estadoestudiante = ee.id_estadoestudiante) WHERE e.rut_estudiante = '"+user.trim()+"' ";
                                             sqldocente="SELECT rut_docente, nombre_docente, apellido_docente, direccion_docente, telefono_docente, nombre_estadodocente FROM docente d JOIN estadodocente ed ON (d.EstadoDocente_id_estadodocente = ed.id_estadodocente) WHERE rut_docente = '"+user.trim()+"'";
@@ -100,7 +105,7 @@
                                             
                                             int contadorestudiante = 0;
                                             int contadordocente = 0;
-                                            
+                                    
                                             ResultSet rsestudiante = con.executeQuery (sqlestudiante);
                                             while (rsestudiante.next()){
                                                 rutestudiante = rsestudiante.getString("rut_estudiante");
@@ -130,72 +135,102 @@
                                             if(contadorestudiante >= 1){
                                             
                                         %>
-                                        <div class="col-4">
-                                            <p><strong>Nombres   </strong></p>
-                                            <p><strong>Apellidos </strong></p>
-                                            <p><strong>Rut       </strong></p>
-                                            <p><strong>Dirección </strong></p>
-                                            <p><strong>Teléfono  </strong></p>
-                                            <p><strong>Años estudio</strong></p>
-                                            <p><strong>Carrea</strong></p>
-                                            <p><strong>Situación</strong></p>
+                                                                    <!--Si encuentra estudiantes desplegara la lista-->
+                                                                    <div class="col-4">
+                                                                        <p><strong>Nombres   </strong></p>
+                                                                        <p><strong>Apellidos </strong></p>
+                                                                        <p><strong>Rut       </strong></p>
+                                                                        <p><strong>Dirección </strong></p>
+                                                                        <p><strong>Teléfono  </strong></p>
+                                                                        <p><strong>Años estudio</strong></p>
+                                                                        <p><strong>Carrea</strong></p>
+                                                                        <p><strong>Situación</strong></p>
+                                                                    </div>
+                                                                    <div class="col-8">
+                                                                        <p><strong>:</strong>
+                                                                            <%out.println(nombreestudiante);%>
+                                                                        </p>
+                                                                        <p><strong>:</strong>
+                                                                            <%out.println(apellidoestudiante);%>
+                                                                        </p>
+                                                                        <p><strong>:</strong>
+                                                                            <%out.println(rutestudiante);%>
+                                                                        </p>
+                                                                        <p><strong>:</strong>
+                                                                            <%out.println(direccionestudiante);%>
+                                                                        </p>
+                                                                        <p><strong>:</strong>
+                                                                            <%out.println(telefonoestudiante);%>
+                                                                        </p>
+                                                                        <p><strong>:</strong>
+                                                                            <%out.println(anioestudio);%>
+                                                                        </p>
+                                                                        <p><strong>:</strong>
+                                                                            <%out.println(carrera);%>
+                                                                        </p>
+                                                                        <p><strong>:</strong>
+                                                                            <%out.println(estadoestudiante);%>
+                                                                        </p>
+                                                                    </div>
+                                                                    <%}else{%>
+                                                                        <div class="col-4">
+                                                                            <p><strong>Nombres   </strong></p>
+                                                                            <p><strong>Apellidos </strong></p>
+                                                                            <p><strong>Rut       </strong></p>
+                                                                            <p><strong>Dirección </strong></p>
+                                                                            <p><strong>Teléfono  </strong></p>
+                                                                            <p><strong>Situación</strong></p>
+                                                                        </div>
+                                                                        <div class="col-8">
+                                                                            <p><strong>:</strong>
+                                                                                <%out.println(nombredocente);%>
+                                                                            </p>
+                                                                            <p><strong>:</strong>
+                                                                                <%out.println(apellidodocente);%>
+                                                                            </p>
+                                                                            <p><strong>:</strong>
+                                                                                <%out.println(rutdocente);%>
+                                                                            </p>
+                                                                            <p><strong>:</strong>
+                                                                                <%out.println(direcciondocente);%>
+                                                                            </p>
+                                                                            <p><strong>:</strong>
+                                                                                <%out.println(telefonodocente);%>
+                                                                            </p>
+                                                                            <p><strong>:</strong>
+                                                                                <%out.println(estadodocente);%>
+                                                                            </p>
+                                                                        </div>
+                                                                        <%}%>
+                                                            </div>
+
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+
                                         </div>
-                                        <div class="col-8">
-                                            <p><strong>:</strong> <%out.println(nombreestudiante);%></p>
-                                            <p><strong>:</strong> <%out.println(apellidoestudiante);%></p>
-                                            <p><strong>:</strong> <%out.println(rutestudiante);%></p>
-                                            <p><strong>:</strong> <%out.println(direccionestudiante);%></p>
-                                            <p><strong>:</strong> <%out.println(telefonoestudiante);%></p>
-                                            <p><strong>:</strong> <%out.println(anioestudio);%></p>
-                                            <p><strong>:</strong> <%out.println(carrera);%></p>
-                                            <p><strong>:</strong> <%out.println(estadoestudiante);%></p>
-                                        </div>
-                                        <%}else{%>
-                                        <div class="col-4">
-                                            <p><strong>Nombres   </strong></p>
-                                            <p><strong>Apellidos </strong></p>
-                                            <p><strong>Rut       </strong></p>
-                                            <p><strong>Dirección </strong></p>
-                                            <p><strong>Teléfono  </strong></p>
-                                            <p><strong>Situación</strong></p>
-                                        </div>
-                                        <div class="col-8">
-                                            <p><strong>:</strong> <%out.println(nombredocente);%></p>
-                                            <p><strong>:</strong> <%out.println(apellidodocente);%></p>
-                                            <p><strong>:</strong> <%out.println(rutdocente);%></p>
-                                            <p><strong>:</strong> <%out.println(direcciondocente);%></p>
-                                            <p><strong>:</strong> <%out.println(telefonodocente);%></p>
-                                            <p><strong>:</strong> <%out.println(estadodocente);%></p>
-                                        </div>
-                                        <%}%>
-                                    </div>
-                                    
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    
-                </div>
-                
-                    <div class="tablaestudiantesolicitudes" style="overflow-x:auto; height: 300px;">
-                        <div class="row">
-                            <div class="col-12">
-                                <h4>Solicitudes Pendientes</h4>
-                               <table class="table">
-                                    <thead class="headertabla">
-                                        <tr>
-                                            <th>Código</th>
-                                            <th>Detalle</th>
-                                            <th>Titulo</th>
-                                            <th>Autor</th>
-                                            <th>Editorial</th>
-                                            <th>Usuario</th>
-                                            <th>Situación</th>
-                                            <th>Estado</th>
-                                        </tr>
-                                    </thead>
-                                    <tbody>
-                                        <%
+
+                                        <div class="tablaestudiantesolicitudes" style="overflow-x:auto; height: 300px;">
+                                            <div class="row">
+                                                <div class="col-12">
+                                                    <h4>Solicitudes Pendientes</h4>
+                                                    <!--Tabla de solicitudes pendientes-->
+                                                    <table class="table">
+                                                        <thead class="headertabla">
+                                                            <tr>
+                                                                <th>Código</th>
+                                                                <th>Detalle</th>
+                                                                <th>Titulo</th>
+                                                                <th>Autor</th>
+                                                                <th>Editorial</th>
+                                                                <th>Usuario</th>
+                                                                <th>Situación</th>
+                                                                <th>Estado</th>
+                                                            </tr>
+                                                        </thead>
+                                                        <tbody>
+                                                            <%
                                             String sqlactivas="SELECT id_prestamo, descripcion_prestamo,EstadoPrestamo_id_estadoprestamo, fechaentrega_prestamo, fechaentregaestimada_prestamo, nombre_libro, nombre_autor, nombre_editorial, Usuario_rut_usuario, nombre_estadoprestamo FROM prestamo p JOIN libro l ON (p.libro_id_libro = l.id_libro) JOIN autor a ON (l.Autor_id_autor = a.id_autor) JOIN editorial e ON (l.Editorial_id_editorial = e.id_editorial) JOIN estadoprestamo ep ON (p.estadoprestamo_id_estadoprestamo = ep.id_estadoprestamo) WHERE id_arrendatario = '"+user.trim()+"' AND estadoprestamo_id_estadoprestamo = 1";
                                  
                                             ResultSet rsprespendientes = con.executeQuery (sqlactivas);
@@ -215,48 +250,63 @@
                                                     mensaje = "Al dia";
                                                 }
                                         %>
-                                        <tr>
-                                            <th scope="row"><%out.println(rsprespendientes.getString("id_prestamo"));%></th>
-                                            <th scope="row"><%out.println(rsprespendientes.getString("descripcion_prestamo"));%></th>
-                                            <th scope="row"><%out.println(rsprespendientes.getString("nombre_libro"));%></th>
-                                            <th scope="row"><%out.println(rsprespendientes.getString("nombre_autor"));%></th>
-                                            <th scope="row"><%out.println(rsprespendientes.getString("nombre_editorial"));%></th>
-                                            <th scope="row"><%out.println(rsprespendientes.getString("Usuario_rut_usuario"));%></th>
-                                            <th scope="row"><%out.println(mensaje);%></th>
-                                            <th scope="row">
-                                                <form action="prestamocontroller.do" method="post" class="form-inline" name="form" target="iframecambiarestado">
-                                                    <input type="hidden" name="idprestamo" value="<%out.println(rsprespendientes.getString("id_prestamo"));%>">
-                                                    <input type="hidden" name="idestado" value="<%out.println(rsprespendientes.getString("EstadoPrestamo_id_estadoprestamo"));%>">
-                                                    <button type="submit" class="btn btn-success" name="cambiarestado" onclick="javascript:window.location.reload()"><%out.println(rsprespendientes.getString("nombre_estadoprestamo"));%></button>
-                                                </form>
-                                            </th>
-                                            <iframe name="iframecambiarestado" style='display:none'></iframe>
-                                        </tr>
-                                        <%}%>
-                                    </tbody>
-                                </table>
-                            </div>
-                        </div>  
-                    </div>
-                    <div class="tablaestudiantesolicitudes" style="overflow-x:auto; height: 300px;">
-                        <div class="row">
-                            <div class="col-12">
-                                <h4>Historial de solicitudes</h4>
-                               <table class="table">
-                                    <thead class="headertabla">
-                                        <tr>
-                                            <th>Código</th>
-                                            <th>Detalle</th>
-                                            <th>Titulo</th>
-                                            <th>Autor</th>
-                                            <th>Editorial</th>
-                                            <th>Usuario</th>
-                                            <th>Situación</th>
-                                            <th>Estado</th>
-                                        </tr>
-                                    </thead>
-                                    <tbody>
-                                        <%
+                                                                <tr>
+                                                                    <th scope="row">
+                                                                        <%out.println(rsprespendientes.getString("id_prestamo"));%>
+                                                                    </th>
+                                                                    <th scope="row">
+                                                                        <%out.println(rsprespendientes.getString("descripcion_prestamo"));%>
+                                                                    </th>
+                                                                    <th scope="row">
+                                                                        <%out.println(rsprespendientes.getString("nombre_libro"));%>
+                                                                    </th>
+                                                                    <th scope="row">
+                                                                        <%out.println(rsprespendientes.getString("nombre_autor"));%>
+                                                                    </th>
+                                                                    <th scope="row">
+                                                                        <%out.println(rsprespendientes.getString("nombre_editorial"));%>
+                                                                    </th>
+                                                                    <th scope="row">
+                                                                        <%out.println(rsprespendientes.getString("Usuario_rut_usuario"));%>
+                                                                    </th>
+                                                                    <th scope="row">
+                                                                        <%out.println(mensaje);%>
+                                                                    </th>
+                                                                    <th scope="row">
+                                                                        <form action="prestamocontroller.do" method="post" class="form-inline" name="form" target="iframecambiarestado">
+                                                                            <input type="hidden" name="idprestamo" value="<%out.println(rsprespendientes.getString(" id_prestamo "));%>">
+                                                                            <input type="hidden" name="idestado" value="<%out.println(rsprespendientes.getString(" EstadoPrestamo_id_estadoprestamo "));%>">
+                                                                            <button type="submit" class="btn btn-success" name="cambiarestado" onclick="javascript:window.location.reload()"><%out.println(rsprespendientes.getString("nombre_estadoprestamo"));%></button>
+                                                                        </form>
+                                                                    </th>
+                                                                    <iframe name="iframecambiarestado" style='display:none'></iframe>
+                                                                </tr>
+                                                                <%}%>
+                                                        </tbody>
+                                                    </table>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="tablaestudiantesolicitudes" style="overflow-x:auto; height: 300px;">
+                                            <div class="row">
+                                                <div class="col-12">
+                                                    <h4>Historial de solicitudes</h4>
+                                                    <!--Tabla historial de solicitudes-->
+                                                    <table class="table">
+                                                        <thead class="headertabla">
+                                                            <tr>
+                                                                <th>Código</th>
+                                                                <th>Detalle</th>
+                                                                <th>Titulo</th>
+                                                                <th>Autor</th>
+                                                                <th>Editorial</th>
+                                                                <th>Usuario</th>
+                                                                <th>Situación</th>
+                                                                <th>Estado</th>
+                                                            </tr>
+                                                        </thead>
+                                                        <tbody>
+                                                            <%
                                             String sqlhistorial="SELECT id_prestamo, descripcion_prestamo, fechaentrega_prestamo, fechaentregaestimada_prestamo, nombre_libro, nombre_autor, nombre_editorial, Usuario_rut_usuario, nombre_estadoprestamo FROM prestamo p JOIN libro l ON (p.libro_id_libro = l.id_libro) JOIN autor a ON (l.Autor_id_autor = a.id_autor) JOIN editorial e ON (l.Editorial_id_editorial = e.id_editorial) JOIN estadoprestamo ep ON (p.estadoprestamo_id_estadoprestamo = ep.id_estadoprestamo) WHERE id_arrendatario = '"+user.trim()+"'";
                                  
                                             ResultSet rshistorial = con.executeQuery (sqlhistorial);
@@ -276,28 +326,45 @@
                                                     mensaje = "Al dia";
                                                 }
                                         %>
-                                        <tr>
-                                            <th scope="row"><%out.println(rshistorial.getString("id_prestamo"));%></th>
-                                            <th scope="row"><%out.println(rshistorial.getString("descripcion_prestamo"));%></th>
-                                            <th scope="row"><%out.println(rshistorial.getString("nombre_libro"));%></th>
-                                            <th scope="row"><%out.println(rshistorial.getString("nombre_autor"));%></th>
-                                            <th scope="row"><%out.println(rshistorial.getString("nombre_editorial"));%></th>
-                                            <th scope="row"><%out.println(rshistorial.getString("Usuario_rut_usuario"));%></th>
-                                            <th scope="row"><%out.println(mensaje);%></th>
-                                            <th scope="row"><%out.println(rshistorial.getString("nombre_estadoprestamo"));%></th>
-                                        </tr>
-                                        <%}%>
-                                    </tbody>
-                                </table>
-                            </div>
-                        </div>  
-                    </div>
-                
-            </div>
-        </div>
-        
-        
-        
-        
-    </body>
-</html>
+                                                                <tr>
+                                                                    <th scope="row">
+                                                                        <%out.println(rshistorial.getString("id_prestamo"));%>
+                                                                    </th>
+                                                                    <th scope="row">
+                                                                        <%out.println(rshistorial.getString("descripcion_prestamo"));%>
+                                                                    </th>
+                                                                    <th scope="row">
+                                                                        <%out.println(rshistorial.getString("nombre_libro"));%>
+                                                                    </th>
+                                                                    <th scope="row">
+                                                                        <%out.println(rshistorial.getString("nombre_autor"));%>
+                                                                    </th>
+                                                                    <th scope="row">
+                                                                        <%out.println(rshistorial.getString("nombre_editorial"));%>
+                                                                    </th>
+                                                                    <th scope="row">
+                                                                        <%out.println(rshistorial.getString("Usuario_rut_usuario"));%>
+                                                                    </th>
+                                                                    <th scope="row">
+                                                                        <%out.println(mensaje);%>
+                                                                    </th>
+                                                                    <th scope="row">
+                                                                        <%out.println(rshistorial.getString("nombre_estadoprestamo"));%>
+                                                                    </th>
+                                                                </tr>
+                                                                <%}%>
+                                                        </tbody>
+                                                    </table>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                </div>
+
+
+
+
+                            </body>
+
+                            </html>

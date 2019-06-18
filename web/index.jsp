@@ -1,31 +1,33 @@
-
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
-<!DOCTYPE html>
+    <!DOCTYPE html>
 
-<html>
+    <html>
+
     <head>
-        
-        
+
+
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>JSP Page</title>
-        
-        
+
+
         <!--Cargando Iconos-->
-        <link rel="stylesheet" href="css/fontawesome-all.css"  type="text/css">
-        
+        <link rel="stylesheet" href="css/fontawesome-all.css" type="text/css">
+
         <!--Carga de archivos css-->
         <link rel="stylesheet" href="css/bootstrap.css">
         <link rel="stylesheet" href="css/estilos.css">
         <link rel="stylesheet" href="css/responsiveslides.css">
-        
-        
-        
+
+
+
     </head>
+
     <body>
         <div class="container-fluid index">
             <main class="cabezera slider-wrap">
+                <!--Slider de imagenes-->
                 <ul class="rslides">
-		    <li><img src="images/index-01.jpg" alt=""></li>
+                    <li><img src="images/index-01.jpg" alt=""></li>
                     <li><img src="images/index-02.jpg" alt=""></li>
                     <li><img src="images/index-03.png" alt=""></li>
                     <li><img src="images/index-04.jpg" alt=""></li>
@@ -33,7 +35,7 @@
                     <li><img src="images/index-06.jpg" alt=""></li>
                     <li><img src="images/index-07.jpg" alt=""></li>
                     <li><img src="images/index-08.jpg" alt=""></li>
-		</ul>
+                </ul>
                 <div class="slider-container">
                     <div class="row">
                         <div class="col-11">
@@ -43,6 +45,7 @@
                                         <span class="logo font-weight-bold">Acerca de Nosotros</span>
                                         <span class="caret"></span>
                                     </button>
+                                    <!--Opciones de secciones-->
                                     <ul class="dropdown-menu" aria-labelledby="menu_acerca_portada">
                                         <li><a href="#secciones">Secciones</a></li>
                                         <li><a href="#noticias">Noticias</a></li>
@@ -53,9 +56,11 @@
                         <div class="col-1">
                             <div class="siganos">
                                 <div class="dropdown pull-right menu-siganos-portada">
+                                    <!--Botón de opciones de redes-->
                                     <button class="btn btn-link dropdown-toggle" type="button" id="menu_siganos_portada" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
                                         <span class="sr-only">Compartir</span><span class="fa fa-share-alt-square fa-3x"></span>
                                     </button>
+                                    <!--Redes sociales-->
                                     <ul class="dropdown-menu" aria-labelledby="menu_siganos_portada">
                                         <li><a href="#"><i class="fab fa-facebook-f" aria-hidden="true"></i> Facebook</a></li>
                                         <li><a href="#"><i class="fab fa-twitter" aria-hidden="true"></i> Twitter</a></li>
@@ -65,18 +70,20 @@
                             </div>
                         </div>
                     </div>
+                    <!--Tirulo de sistema-->
                     <div class="titulo-index">
-                        <h4 class="text-center">B i b l i o t e c a     U n i v e r s i t a r i a</h4>
+                        <h4 class="text-center">B i b l i o t e c a U n i v e r s i t a r i a</h4>
                     </div>
                     <div class="row titulo">
                         <div class="logo-portada">
                             <a href="index.jsp">
-                                <img src="images/logo.png" >
+                                <img src="images/logo.png">
                             </a>
                         </div>
                     </div>
                     <div class="buscador-horizontal container">
                         <div class="formulario">
+                            <!--Formulario de busqueda-->
                             <form action="ingresolibrocontroller.do" method="post" class="form-inline" name="form">
                                 <input type="text" class="form-control" name="busquedalibro" placeholder="Busqueda por titulo, Autor o Editorial..." required="">
                                 <button type="submit" name="btn_busquedalibro"><span><i class="fab fa-sistrix"></i></span></button>
@@ -84,14 +91,14 @@
                         </div>
                     </div>
                 </div>
-                
+
             </main>
-            
-            
-            
-            
-            
-            
+
+
+
+
+
+            <!--Menú principal de pagina de inicio o index-->
             <div class="menu-index">
                 <ul class="item-menu">
                     <li>
@@ -109,7 +116,7 @@
                                 <br>
                                 <p>Libros</p>
                             </span>
-                            
+
                         </a>
                     </li>
                     <li>
@@ -170,7 +177,7 @@
                     </li>
                 </ul>
             </div>
-            
+            <!--Seccion de noticias -->
             <div class="container targetas" id="secciones">
                 <div class="row">
                     <div class="col-3">
@@ -218,7 +225,7 @@
                         </div>
                     </div>
                 </div>
-                
+
                 <div class="row">
                     <div class="col-3">
                         <div class="card-deck">
@@ -276,7 +283,8 @@
                             </div>
                             <div class="card-body col-10">
                                 <p class="text-justify">
-                                    Temas de cine, fotografía, museos, literatura, historia y ciencias sociales, entre otras, están entre las nuevas investigaciones. En total, la Biblioteca Nacional digitalizará 135 mil páginas este año: 60 mil de ellas serán difundidas en minisitios y cápsulas de Memoria Chilena y 75 mil en la Biblioteca Nacional Digital.
+                                    Temas de cine, fotografía, museos, literatura, historia y ciencias sociales, entre otras, están entre las nuevas investigaciones. En total, la Biblioteca Nacional digitalizará 135 mil páginas este año: 60 mil de ellas serán difundidas en minisitios y
+                                    cápsulas de Memoria Chilena y 75 mil en la Biblioteca Nacional Digital.
                                 </p>
                             </div>
                         </div>
@@ -286,7 +294,8 @@
                             </div>
                             <div class="card-body col-10">
                                 <p class="text-justify">
-                                    Temas de cine, fotografía, museos, literatura, historia y ciencias sociales, entre otras, están entre las nuevas investigaciones. En total, la Biblioteca Nacional digitalizará 135 mil páginas este año: 60 mil de ellas serán difundidas en minisitios y cápsulas de Memoria Chilena y 75 mil en la Biblioteca Nacional Digital.
+                                    Temas de cine, fotografía, museos, literatura, historia y ciencias sociales, entre otras, están entre las nuevas investigaciones. En total, la Biblioteca Nacional digitalizará 135 mil páginas este año: 60 mil de ellas serán difundidas en minisitios y
+                                    cápsulas de Memoria Chilena y 75 mil en la Biblioteca Nacional Digital.
                                 </p>
                             </div>
                         </div>
@@ -296,24 +305,25 @@
                             </div>
                             <div class="card-body col-10">
                                 <p class="text-justify">
-                                    Temas de cine, fotografía, museos, literatura, historia y ciencias sociales, entre otras, están entre las nuevas investigaciones. En total, la Biblioteca Nacional digitalizará 135 mil páginas este año: 60 mil de ellas serán difundidas en minisitios y cápsulas de Memoria Chilena y 75 mil en la Biblioteca Nacional Digital.
+                                    Temas de cine, fotografía, museos, literatura, historia y ciencias sociales, entre otras, están entre las nuevas investigaciones. En total, la Biblioteca Nacional digitalizará 135 mil páginas este año: 60 mil de ellas serán difundidas en minisitios y
+                                    cápsulas de Memoria Chilena y 75 mil en la Biblioteca Nacional Digital.
                                 </p>
                             </div>
                         </div>
-                        
+
                     </div>
                 </div>
-                
+
             </div>
-            
-            
-            
-            
-            
+
+
+
+
+
         </div>
-        
-        
-        
+
+
+        <!--Footer de página-->
         <footer class="piepagina">
             <div class="container">
                 <p>2018 © Universidad Santo Román Todos los derechos reservados</p>
@@ -324,10 +334,10 @@
                 </ul>
             </div>
         </footer>
-        
-        
-        
-        
+
+
+
+
         <!--Carga de archivos js-->
         <script src="js/jquery-3.3.1.min.js"></script>
         <script src="js/popper.min.js"></script>
@@ -350,4 +360,5 @@
         -->
         <script src="js/sitio.js"></script>
     </body>
-</html>
+
+    </html>
